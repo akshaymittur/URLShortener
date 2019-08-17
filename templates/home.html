@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Magnify!</title>
+        <meta name="description" content="url shortening">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="bg-teal-200">
+       <header class="bg-teal-400 text-black py-6 px-4 text-center">
+           <h1 class="text-2xl">Magnify! Shorten Your URLs</h1>
+       </header>
+       <div>
+            {% if not short_url %}
+                    <form class="w-full max-w-sm py-64 flex-auto mx-auto" method="POST" action="">
+                        <div class="flex items-center border-b border-b-2 border-teal-500 py-2 align">
+                        <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
+                        type="text" 
+                        placeholder="Enter Url Here!" 
+                        name="url"
+                        >
+                        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" 
+                        type="submit"
+                        >
+                            Shorten
+                        </button>
+                        </div>
+                    </form>
+            {% else %}
+                    <div>
+                        Enjoy, your shortened URL is: <a href="{{short_url}}"> {{short_url}}</a>
+                    </div>
+                    {% endif %}
+        </div>
+    </body>
+</html>

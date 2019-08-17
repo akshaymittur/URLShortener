@@ -1,0 +1,13 @@
+@font-face {
+    src: url(fonts/RobotoMono-Light.ttf);
+    font-family: RobotoMono;
+}
+
+body {
+    font-family: RobotoMono;
+    font-weight: 600;
+}
+
+.align {
+    margin: auto;
+}
